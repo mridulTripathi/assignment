@@ -2,31 +2,25 @@ package com.walrus.assignment.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
 @Setter
 @Getter
-@ToString
-public class User {
+@Entity
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private Long userId;
 
-    private String password;
+    private String post;
 
-    @Column(unique = true)
-    private String userName;
-
-    @Column(unique = true)
-    private String emailId;
+    private int likeCount;
 
     @CreatedDate
     private Date createdAt;
